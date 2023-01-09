@@ -86,3 +86,29 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+console.log (finances.length)
+
+var numberOfMonths = finances.length
+console.log("The  number of months is " + numberOfMonths)
+console.log(`This dataset includes ${numberOfMonths} months of data`)
+var profitOrLoss = 0
+for (let i = 0; i < finances.length; i++) {
+    var currentIncome = finances[i][1]
+    profitOrLoss += currentIncome
+}
+
+console.log(`This is the total income $${profitOrLoss}`)
+var maxProfit = 0;
+var maxProfitMonth;
+
+for (let i = 1; i < finances.length; i++) {
+    var currentMonth = finances[i][0];
+    var currentIncome = finances[i][1]
+    var pastIncome = finances[i-1][1]
+    if(currentIncome - pastIncome > maxProfit){
+        maxProfit = currentIncome- pastIncome
+        maxProfitMonth = currentMonth
+    }
+}
+console.log(maxProfitMonth)
