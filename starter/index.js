@@ -111,4 +111,4 @@ for (let i = 1; i < finances.length; i++) {
         maxProfitMonth = currentMonth
     }
 }
-console.log(maxProfitMonth)
+console.log(`Greatest increase in profit ${maxProfitMonth} $${maxProfit}`)
