@@ -112,3 +112,17 @@ for (let i = 1; i < finances.length; i++) {
     }
 }
 console.log(`Greatest increase in profit ${maxProfitMonth} $${maxProfit}`)
+
+var maxLosses = 0;
+var maxLossesMonth;
+for (let i = 1; i < finances.length; i++) {
+    var currentMonth = finances[i][0];
+    var currentIncome = finances[i][1]
+    var pastIncome = finances[i-1][1]
+    if(currentIncome - pastIncome < maxProfit){
+        maxLosses = currentIncome- pastIncome
+        maxLossesMonth = currentMonth
+    }
+}
+console.log(`Greatest decrease in profit ${maxLossesMonth} $${maxLosses}`)
+
