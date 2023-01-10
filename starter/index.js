@@ -126,15 +126,16 @@ for (let i = 1; i < finances.length; i++) {
 }
 console.log(`Greatest decrease in profit ${maxLossesMonth} $${maxLosses}`)
 
-
+//The average of the changes in Profit/Losses over the entire period.
 let changes = [];
 for (let i = 1; i < finances.length; i++) {
     var currentIncome = finances[i-1][1];
     var pastIncome = finances[i][1];
-    // console.log("currentIncome: " + currentIncome + " / pastIncome: " + pastIncome);
     changes[i] = currentIncome + pastIncome;
     console.log("monthly changes: " + changes[i]);
 console.log(i);
 }
 
-// var averageIncome = currentIncome - pastIncome / 2 * 100 
+for (let i = 0; i < finances.length; i++) {
+    console.log("This is the average of the changes: " + changes[i] / finances.length[0]);  
+}
