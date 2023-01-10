@@ -104,8 +104,8 @@ var maxProfitMonth;
 
 for (let i = 1; i < finances.length; i++) {
     var currentMonth = finances[i][0];
-    var currentIncome = finances[i][1]
-    var pastIncome = finances[i-1][1]
+    var currentIncome = finances[i][1];
+    var pastIncome = finances[i-1][1];
     if(currentIncome - pastIncome > maxProfit){
         maxProfit = currentIncome- pastIncome
         maxProfitMonth = currentMonth
@@ -117,8 +117,8 @@ var maxLosses = 0;
 var maxLossesMonth;
 for (let i = 1; i < finances.length; i++) {
     var currentMonth = finances[i][0];
-    var currentIncome = finances[i][1]
-    var pastIncome = finances[i-1][1]
+    var currentIncome = finances[i][1];
+    var pastIncome = finances[i-1][1];
     if(currentIncome - pastIncome < maxProfit){
         maxLosses = currentIncome- pastIncome
         maxLossesMonth = currentMonth
@@ -126,3 +126,15 @@ for (let i = 1; i < finances.length; i++) {
 }
 console.log(`Greatest decrease in profit ${maxLossesMonth} $${maxLosses}`)
 
+
+let changes = [];
+for (let i = 1; i < finances.length; i++) {
+    var currentIncome = finances[i-1][1];
+    var pastIncome = finances[i][1];
+    // console.log("currentIncome: " + currentIncome + " / pastIncome: " + pastIncome);
+    changes[i] = currentIncome + pastIncome;
+    console.log("monthly changes: " + changes[i]);
+console.log(i);
+}
+
+// var averageIncome = currentIncome - pastIncome / 2 * 100 
